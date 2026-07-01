@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>تفاصيل المادة</title>
+    </head>
+<body>
+    <h1 id="subject-title">اسم المادة</h1>
+    
+    <a href="#" class="btn">1. الكتاب المدرسي</a>
+    <a href="" id="resource-link" class="btn" target="_blank">2. الرزم التعليمية</a>
+    <a href="#" class="btn">3. الاختبارات</a>
+    <a href="#" class="btn">4. فيديوهات الشرح</a>
+    <a href="#" class="btn">5. تدريبات على الدرس</a>
+    
+    <a href="index.html" class="btn">الرجوع للرئيسية</a>
+
+    <script>
+        // هذا السكربت يحدد الرابط بناءً على ما يرسله الزر
+        const urlParams = new URLSearchParams(window.location.search);
+        const link = urlParams.get('link');
+        document.getElementById('resource-link').href = link;
+    </script>
+</body>
+</html>
