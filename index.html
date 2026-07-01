@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة توجيهي 2009 التفاعلية</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: #0b1a30; color: #fff; display: flex; justify-content: center; align-items: center; height: 100vh; overflow: hidden; }
+        .phone-screen { width: 100vw; height: 100vh; background-color: #0f2442; display: flex; flex-direction: column; position: relative; }
+        #splash { display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; position: absolute; z-index: 10; background-color: #0b1a30; transition: opacity 0.5s ease; }
+        .logo-box { width: 130px; height: 130px; background: linear-gradient(135deg, #d4af37, #1e3d6b); border-radius: 25px; border: 3px solid #d4af37; display: flex; justify-content: center; align-items: center; font-size: 28px; font-weight: bold; color: #fff; box-shadow: 0 0 25px rgba(212,175,55,0.4); margin-bottom: 20px; }
+        .app-name { font-size: 24px; font-weight: bold; color: #fff; margin-bottom: 5px; }
+        .app-subtitle { font-size: 14px; color: #8fa0bc; margin-bottom: 30px; text-align: center; padding: 0 20px; }
+        .loader { width: 65%; height: 6px; background-color: #1a355e; border-radius: 3px; overflow: hidden; }
+        .loader-bar { width: 0%; height: 100%; background-color: #d4af37; animation: load 2.5s forwards ease-in-out; }
+        .designer-credit { margin-top: 25px; color: #d4af37; font-size: 18px; font-weight: bold; letter-spacing: 0.5px; }
+        #main-menu { display: none; flex-direction: column; padding: 40px 20px; justify-content: center; height: 100%; text-align: center; }
+        .welcome-title { font-size: 26px; font-weight: bold; margin-bottom: 10px; color: #fff; }
+        .welcome-desc { font-size: 15px; color: #8fa0bc; margin-bottom: 40px; }
+        .branch-card { padding: 30px 20px; border-radius: 20px; margin-bottom: 25px; font-size: 24px; font-weight: bold; cursor: pointer; transition: transform 0.2s; box-shadow: 0 8px 20px rgba(0,0,0,0.3); display: flex; flex-direction: column; gap: 8px; }
+        .scientific { background: linear-gradient(135deg, #d4af37, #aa841b); color: #0b1a30; border: 1px solid #ffe89e; }
+        .literary { background: linear-gradient(135deg, #1e3d6b, #102544); color: #fff; border: 2px solid #254b82; }
+        @keyframes load { 0% { width: 0%; } 100% { width: 100%; } }
+    </style>
+</head>
+<body>
+    <div class="phone-screen">
+        <div id="splash">
+            <div class="logo-box">2009</div>
+            <div class="app-name">منصة توجيهي 2009</div>
+            <div class="app-subtitle">الشرح الذي يفكك المعقد ليفهم الجميع</div>
+            <div class="loader"><div class="loader-bar"></div></div>
+            <div class="designer-credit">تصميم د. محمد أبو ديب</div>
+        </div>
+        <div id="main-menu">
+            <div class="welcome-title">مرحباً بك في مسار التميز 👋</div>
+            <div class="welcome-desc">اختر فرعك الأكاديمي</div>
+            <div class="branch-card scientific">الفرع العلمي</div>
+            <div class="branch-card literary">الفرع الأدبي</div>
+        </div>
+    </div>
+    <script>
+        setTimeout(() => {
+            const splash = document.getElementById('splash');
+            splash.style.opacity = '0';
+            setTimeout(() => {
+                splash.style.display = 'none';
+                document.getElementById('main-menu').style.display = 'flex';
+            }, 500);
+        }, 2500);
+    </script>
+</body>
+</html>
